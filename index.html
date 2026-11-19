@@ -12,15 +12,17 @@
       <ul>
         <li>
           <a
-            href="#"
+            href="#home-page"
             class="active"
             id="nav-home"
+            aria-controls="home-page"
+            aria-current="page"
             onclick="showPage('home', event)"
             >Home</a
           >
         </li>
         <li>
-          <a href="#" id="nav-projects" onclick="showPage('projects', event)"
+          <a href="#projects-page" id="nav-projects" aria-controls="projects-page" onclick="showPage('projects', event)"
             >My Projects</a
           >
         </li>
@@ -369,12 +371,16 @@
 
           navHome.classList.add("active");
           navProjects.classList.remove("active");
+          navHome.setAttribute("aria-current", "page");
+          navProjects.removeAttribute("aria-current");
         } else {
           homePage.classList.add("hidden");
           projectsPage.classList.remove("hidden");
 
           navProjects.classList.add("active");
           navHome.classList.remove("active");
+          navProjects.setAttribute("aria-current", "page");
+          navHome.removeAttribute("aria-current");
         }
       }
     </script>
