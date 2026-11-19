@@ -41,6 +41,13 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent-dark);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
 
 img {
   display: block;
